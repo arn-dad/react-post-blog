@@ -23,6 +23,7 @@ const Login = (props) => {
     API.people.login(data).then(respone => {
       return respone.json().then((data) => {
           Storage.set('pb-token', data.id );
+          Storage.set('pb-user', { userId: data.userId } );
           props.changeNav('WORKSPACE');
         return data
       })
