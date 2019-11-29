@@ -1,24 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
+import Nav from './screens/nav';
+import Home from './screens/home';
+import Login from './screens/login';
+import Workspace from './screens/workspace';
+import Storage from './services/storage';
+
 import './App.css';
 
 function App() {
+  const [tab, setNavigation] = useState('HOME');
+  const onNavigationChange = (tab) => {
+    setNavigation(tab)
+  }
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="main-container main-blogpost">
+      <Nav tab={tab} onChange={onNavigationChange}/>
+      <main className="outline">
+        {tab === 'HOME' && <Home />}
+        {tab === 'LOGIN' && <Login changeNav={onNavigationChange}/>}
+        {tab === 'WORKSPACE' && <Workspace />}
+      </main>
     </div>
   );
 }

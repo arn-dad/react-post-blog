@@ -1,0 +1,25 @@
+.artical-wrapp {
+  height: 150px;
+  margin: 10px 0;
+  box-shadow: 0 3px 5px 0 rgba(0,0,0,0.08);
+  transition: box-shadow 0.2s ease-in-out;
+}
+
+.article-header {
+  height: 28px;
+  width: 100%;
+  border-bottom: 1px solid #ccc;
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+}
+
+.article-author {
+  font-weight: 600;
+}
+
+.article-body {
+  height: auto;
+  width: 100%;
+  padding: 5px;
+}
